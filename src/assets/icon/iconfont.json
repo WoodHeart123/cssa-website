@@ -1,0 +1,37 @@
+{
+  "id": "3228537",
+  "name": "cssa",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "5333979",
+      "name": "向下渐变箭头",
+      "font_class": "xiangxiajiantou",
+      "unicode": "e707",
+      "unicode_decimal": 59143
+    },
+    {
+      "icon_id": "19363899",
+      "name": "向下渐变箭头",
+      "font_class": "xiangxiajiantou1",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "29158490",
+      "name": "向下渐变箭头",
+      "font_class": "xiangxiajiantou1-copy",
+      "unicode": "ec1f",
+      "unicode_decimal": 60447
+    },
+    {
+      "icon_id": "4933869",
+      "name": "点",
+      "font_class": "dian",
+      "unicode": "ec1e",
+      "unicode_decimal": 60446
+    }
+  ]
+}
