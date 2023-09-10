@@ -5,9 +5,9 @@
         <img src="../assets/home/cssalogo-red-sm.png" />
       </div>
       <div class="menu_col">
-        <a href="http:www.cssaatuwmadison.com.cn/" class="font-dark">主页</a>
-        <a href="http:www.cssaatuwmadison.com.cn/AboutCSSA" class="font-dark">关于cssa</a>
-        <a href="http:www.cssaatuwmadison.com.cn/Member" class="font-dark">成员相册</a>
+        <a href="http://www.cssaatuwmadison.com.cn/" class="font-dark">主页</a>
+        <a href="http://www.cssaatuwmadison.com.cn/AboutCSSA" class="font-dark">关于cssa</a>
+        <a href="http://www.cssaatuwmadison.com.cn/Member" class="font-dark">成员相册</a>
         <div class="font-dark selected">联系我们</div>
       </div>
     </div>
@@ -32,7 +32,7 @@
     </div>
     <div class="contact-box">
       <div class="contact">生活小助手小程序</div>
-      <div>CSSA@UW-Madison生活小助手小程序已上线，内附“二手闲置”，“租房信息”，“话题讨论”和“新生手册”等功能，扫码关注哦。</div>
+      <div>CSSA@UW-Madison生活小助手小程序已上线，内附“二手闲置”，“租房信息”等功能，扫码关注哦。</div>
       <img src="../assets/contact/xcx.jpg">
     </div>
     <div class="blank"></div>
@@ -129,7 +129,6 @@ import PageEnd from "../components/pageEnd.vue";
   color: white;
   font-size: 13px;
   text-transform: uppercase;
-  margin: 0 10vw 0 10vw;
 }
 .contact-box {
   display: flex;

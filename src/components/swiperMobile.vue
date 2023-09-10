@@ -10,7 +10,9 @@
           <div>威斯康辛大学麦迪逊分校</div>
           <div>中国学生学者联合会</div>
         </div>
-        <div class="font_large">最专业、最靠谱、最CSSA</div>
+        <div class="font_large">最专业</div>
+        <div class="font_large">最靠谱</div>
+        <div class="font_large">最CSSA</div>
         <div class="button"  @click="$emit('toAboutCSSA')">关于CSSA</div>
       </div>
     </div>
@@ -19,7 +21,7 @@
 
 <script>
 export default {
-  name: "Swiper",
+  name: "SwiperMobile",
   data() {
     return {
       back_img: [require("../assets/home/2020members.jpg"),require("../assets/home/choujiang.jpg"),require("../assets/home/chunwan.jpg"),require("../assets/home/yanhua.jpg")],
@@ -30,7 +32,8 @@ export default {
     increment() {      
       let img = new Image();
       img.onload = () => {
-        this.img_index = (this.img_index + 1) % this.back_img.length;
+        console.log('img loaded');
+        this.img_index = (this.img_index + 1) % this.back_img.length;4
       }
       img.src = this.back_img[(this.img_index + 1) % this.back_img.length];
 
@@ -40,6 +43,7 @@ export default {
         type:"get",
         url:"user/background",
       };
+      window.console.log(opt.url);
       api(opt, (ret) => {
         if(ret.status == 200){
           let imgUrl = "";

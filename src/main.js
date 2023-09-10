@@ -5,14 +5,17 @@ import MainPage from './page/main.vue'
 import AboutCSSA from './page/aboutCSSA.vue'
 import Contact from './page/contact.vue'
 import Member from './page/member.vue'
-import { Swipe, SwipeItem } from 'vant';
+import { Swipe, SwipeItem,Tab, Tabs } from 'vant';
+
 import 'vant/lib/index.css';
 Vue.config.productionTip = false
 
 Vue.use(VueRouter)
 Vue.use(Swipe)
 Vue.use(SwipeItem)
-
+Vue.use(Tab)
+Vue.use(Tabs);
+// register Swiper custom elements
 
 const routes=[
   { path: '/', component: MainPage, name:"MainPage"},

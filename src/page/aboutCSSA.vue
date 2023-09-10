@@ -139,6 +139,7 @@ export default {
   },
   data() {
     return {
+      isMobile: false,
       scrollHeader: false,
       actList: [
         {
@@ -226,14 +227,26 @@ export default {
     },
     toMember:function(){
       this.$router.push("Member");
+    },
+    onResize () {
+      this.isMobile = window.innerWidth < 600;
+      console.log(this.isMobile);
     }
+    
   },
   mounted() {
+    this.onResize()
     window.addEventListener("scroll", this.handleScroll);
+    window.addEventListener('resize', this.onResize, { passive: true })
   },
   destroyed() {
     window.removeEventListener("scroll", this.handleScroll);
   },
+  beforeDestroy(){
+    if (typeof window !== 'undefined') {
+      window.removeEventListener('resize', this.onResize, { passive: true })
+    }
+  }
 };
 import Sponsor from "../components/sponser.vue";
 import PageEnd from "../components/pageEnd.vue";
@@ -282,7 +295,6 @@ import actBox from "../components/actBox.vue";
   color: #4c4c4c;
   font-size: 13px;
   text-transform: uppercase;
-  margin: 0 10vw 0 10vw;
 }
 .background_box {
   margin-top: 75px;

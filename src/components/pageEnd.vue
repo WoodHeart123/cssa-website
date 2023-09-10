@@ -4,7 +4,7 @@
       <img class="logo_gif" src="../assets/home/Logo-02.gif" />
     </div>
     <div class="footnote">
-      <a>© 威斯康辛大学中国学生学者联合会 2022</a>
+      <a>© 威斯康辛大学中国学生学者联合会 2023</a>
     </div>
   </div>
 </template>

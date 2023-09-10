@@ -75,7 +75,7 @@ export default {
   align-items: center;
   width: 100vw;
   height: 80vh !important;
-  margin-top: 20vh;
+  margin-top: 20px;
 }
 .act {
   height: 100vh;
@@ -97,8 +97,8 @@ export default {
 }
 
 .box {
-  padding:0 10vw 0 10vw;
-  width: 15vw;
+  padding:0 10vw 0 5vw;
+  width: 20vw;
   height: 10vh;
   margin-bottom: 5vh;
   text-align: right;

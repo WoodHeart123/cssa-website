@@ -20,7 +20,6 @@ export default {
   display: flex;
   flex-direction: column;
   width:20vw;
-  height:80vh;
   margin-right:3vw;
   margin-left:3vw;
 }
