@@ -5,19 +5,25 @@
         <img src="../assets/home/cssalogo-red-sm.png" />
       </div>
       <div class="menu_col">
-        <a href="http://www.cssaatuwmadison.com.cn/" class="font-dark">主页</a>
-        <a href="http://www.cssaatuwmadison.com.cn/AboutCSSA" class="font-dark">关于cssa</a>
-        <div class="font-dark  selected">成员相册</div>
-        <a href="http://www.cssaatuwmadison.com.cn/Contact" class="font-dark">联系我们</a>
+        <a :href="getComputedUrl('')" class="font-dark">主页</a>
+        <a :href="getComputedUrl('AboutCSSA')" class="font-dark">关于cssa</a>
+        <div class="font-dark selected">成员相册</div>
+        <a :href="getComputedUrl('Contact')" class="font-dark"
+            >联系我们</a
+          >
       </div>
     </div>
     <div
       class="background_box"
       :style="{ 'background-image': 'url(' + backgroundUrl + ')' }"
     >
-      <div class="page_title">联系我们</div>
+      <div class="page_title">成员相册</div>
     </div>
-    <member-box v-for="(board,index) in boards" :key="index" :board="board"></member-box>
+    <member-box
+      v-for="(board, index) in boards"
+      :key="index"
+      :board="board"
+    ></member-box>
     <sponsor></sponsor>
     <page-end></page-end>
   </div>
@@ -26,25 +32,78 @@
 <script>
 export default {
   name: "Contact",
-    components: {
+  components: {
     Sponsor,
     PageEnd,
-    MemberBox
+    MemberBox,
   },
   data() {
     return {
       backgroundUrl: require("../assets/contact/contact.jpg"),
       year: new Date().getFullYear(),
-      scrollHeader:false,
-      boards:[
-        {title:"主席团",text:["责任在肩，传承辉煌未来","运筹帷幄，引领崭新的未来","用开拓与进取，创造更多的可能","新的征程，我们的show time"]},
-        {title:"外联部",text:["辨士之才，君子之风","谈判桌前，西装革履，挥洒自如","自企业处取赞助，于社团间架桥梁","专业、高效，而不至于此"]},
-        {title:"行政部",text:["线下组织内部活动，线上编辑精美文宣","财务规划的清晰，亦或是深夜电台的温暖","兼收成与创新，于稳重求进"]},
-        {title:"活动部",text:["恶魔湖的欢脱，非诚的甜蜜","一站到底的紧张，春晚的祝福","一切想感受的，有我们来策划、组织","努力与热枕，只为最后那一刻呈现"]},
-        {title:"多媒体部",text:["光与影的交界，声音与色彩的中心","用不眠不休的夜晚，反复雕琢着细节","如山般累计的灵感，但取一勺饮之","CSSA的门面，我们力求精致完美"]},
-        {title:"研究生部",text:["研以经世，究以纬国","怀揣着专注和热忱，助力学术和职业","为深造的莘莘学子，铺平现在与未来的道路","学术与生活，我们一起向上"]},
-        {title:"技术部",text:["想它人之未想","为他人之未为"]},
-      ]
+      scrollHeader: false,
+      boards: [
+        {
+          title: "主席团",
+          text: [
+            "责任在肩，传承辉煌未来",
+            "运筹帷幄，引领崭新的未来",
+            "用开拓与进取，创造更多的可能",
+            "新的征程，我们的show time",
+          ],
+          url: "https://mp.weixin.qq.com/s/oFJb-Febs9OKMl6KWB7NEw"
+        },
+        {
+          title: "外联部",
+          text: [
+            "辨士之才，君子之风",
+            "谈判桌前，西装革履，挥洒自如",
+            "自企业处取赞助，于社团间架桥梁",
+            "专业、高效，而不至于此",
+          ],
+          url: "https://mp.weixin.qq.com/s/2ygVh60G830R-N_m-i4HYQ"
+        },
+        {
+          title: "宣传部",
+          text: [
+            "线下组织内部活动，线上编辑精美文宣",
+            "财务规划的清晰，亦或是深夜电台的温暖",
+            "兼收成与创新，于稳重求进",
+          ],
+          url: "https://mp.weixin.qq.com/s/byHPG2xRf-bLHdaOITvBsA"
+        },
+        {
+          title: "活动部",
+          text: [
+            "恶魔湖的欢脱，非诚的甜蜜",
+            "一站到底的紧张，春晚的祝福",
+            "一切想感受的，有我们来策划、组织",
+            "努力与热枕，只为最后那一刻呈现",
+          ],
+          url: "https://mp.weixin.qq.com/s/i1UxZ312hToxB1fa-veGDA"
+        },
+        {
+          title: "多媒体部",
+          text: [
+            "光与影的交界，声音与色彩的中心",
+            "用不眠不休的夜晚，反复雕琢着细节",
+            "如山般累计的灵感，但取一勺饮之",
+            "CSSA的门面，我们力求精致完美",
+          ],
+          url: "https://mp.weixin.qq.com/s/G3HNWdsM0YvXbEKMzSZDHg"
+        },
+        {
+          title: "研究生部",
+          text: [
+            "研以经世，究以纬国",
+            "怀揣着专注和热忱，助力学术和职业",
+            "为深造的莘莘学子，铺平现在与未来的道路",
+            "学术与生活，我们一起向上",
+          ],
+          url: "https://mp.weixin.qq.com/s/CgC5HT-27dVgX7Sp2kYMiQ"
+        },
+        { title: "技术部", text: ["想它人之未想", "为他人之未为"], url: "https://mp.weixin.qq.com/s/1hdb6sfn6obA_os7luKpPQ" },
+      ],
     };
   },
   mounted() {
@@ -59,15 +118,9 @@ export default {
         this.scrollHeader = false;
       }
     },
-    toMain:function(){
-      this.$router.push("/");
+    getComputedUrl(path){
+      return `${window.location.origin}/${path}`
     },
-    toAboutCSSA:function(){
-      this.$router.push("AboutCSSA");
-    },
-    toContact:function(){
-      this.$router.push("Contact");
-    }
   },
 };
 import Sponsor from "../components/sponser.vue";
@@ -83,6 +136,7 @@ import MemberBox from "../components/memberBox.vue";
   width: 100vw;
   flex: 1;
   overflow-x: hidden;
+  align-items: center;
 }
 .header {
   top: 0;
@@ -92,16 +146,16 @@ import MemberBox from "../components/memberBox.vue";
   position: fixed;
   width: 80vw;
   height: 75px;
-  z-index:0;
+  z-index: 10;
   flex-direction: row;
-  background:white;
+  background: white;
   padding: 0 10vw 0 10vw;
   -webkit-transition: all 3s ease;
   transition: all 0.5s ease;
 }
 .header_scroll {
   height: 60px;
-  border-bottom:1px solid #e9e9e9;
+  border-bottom: 1px solid #e9e9e9;
 }
 .header_red {
   height: 60px;
@@ -122,7 +176,6 @@ import MemberBox from "../components/memberBox.vue";
   color: white;
   font-size: 13px;
   text-transform: uppercase;
-  margin: 0 10vw 0 10vw;
 }
 .contact-box {
   display: flex;
@@ -134,9 +187,9 @@ import MemberBox from "../components/memberBox.vue";
   color: #2f2f2f;
   letter-spacing: 0.02em;
   text-transform: capitalize;
-  padding-bottom:10px;
-  border-bottom:1px solid #e9e9e9;
-  margin-bottom:5vh;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e9e9e9;
+  margin-bottom: 5vh;
   align-items: center;
 }
 .background_box {

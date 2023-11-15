@@ -5,9 +5,9 @@
         <img src="../assets/home/cssalogo-red-sm.png" />
       </div>
       <div class="menu_col">
-        <a href="http://www.cssaatuwmadison.com.cn/" class="font-dark">主页</a>
-        <a href="http://www.cssaatuwmadison.com.cn/AboutCSSA" class="font-dark">关于cssa</a>
-        <a href="http://www.cssaatuwmadison.com.cn/Member" class="font-dark">成员相册</a>
+        <a :href="getComputedUrl('')" class="font-dark">主页</a>
+        <a :href="getComputedUrl('AboutCSSA')" class="font-dark">关于cssa</a>
+        <a :href="getComputedUrl('Member')" class="font-dark">成员相册</a>
         <div class="font-dark selected">联系我们</div>
       </div>
     </div>
@@ -19,16 +19,15 @@
     </div>
     <div class="contact-box">
       <div class="contact">-> 微信公众号: CSSAatUWMadison</div>
-      <div class="contact">-> B站账户: CSSAATUWMADISON</div>
-      <div class="contact">-> 新浪微博: @威斯康星大学UW-CSSA</div>
-      <div class="contact">-> Youtube: CSSA At UW-Madison</div>
-      <div class="contact">-> Instagram: Cssa_at-Uwmadison</div>
-      <div class="contact">-> Facebook: CSSA At UW-Madison</div>
+      <div class="contact">-> Youtube: CSSA At UW-Madison <a class="account-link" href="https://www.youtube.com/@cssaatuw-madison8217">去关注</a></div>
+      <div class="contact">-> Instagram: Cssa_at-Uwmadison  <a class="account-link" href="https://www.instagram.com/cssa_at_uwmadison/">去关注</a></div>
+      <div class="contact">-> 小红书: CSSAatUWMadison <a class="account-link" href="https://www.xiaohongshu.com/user/profile/5c95c99b0000000012001064">去关注</a></div> 
+      <div class="contact">-> 抖音: CSSAatUWMadison <a class="account-link" href="https://www.douyin.com/user/MS4wLjABAAAA4PoQHiC2gWZIyqdTciUWenD22OyLjnRQe5LFhFSDs_hnxV9BvtFxUm1dY9sX9Kme">去关注</a></div> 
     </div>
     <div class="contact-box"> 
       <div class="contact">新生微信群</div>
-      <div>{{year}}秋季新生群、家长群已建立，请添加下方学联小助手微信，并备注上自己的NetID，小助手会把你们拉进秋季新生群。家长也可以让小助手拉您进家长群，只需在加微信时备注上“家长”就可以了。</div>
-      <img src="../assets/contact/xzs.jpg">
+      <div>{{year}}秋季新生群、家长群已建立，请添加下方学联小助手微信，并备注上自己的NetID，小助手会把你们拉进秋季新生群。家长也可以让小助手拉您进家长群，只需在加微信时备注上"家长"就可以了。</div>
+      <img class="qr-code" src="../assets/contact/xzs.jpg">
     </div>
     <div class="contact-box">
       <div class="contact">生活小助手小程序</div>
@@ -67,15 +66,9 @@ export default {
         this.scrollHeader = false;
       }
     },
-    toMain:function(){
-      this.$router.push("/");
+    getComputedUrl(path){
+      return `${window.location.origin}/${path}`
     },
-    toAboutCSSA:function(){
-      this.$router.push("AboutCSSA");
-    },
-    toMember:function(){
-      this.$router.push("Member");
-    }
   },
 };
 import Sponsor from "../components/sponser.vue";
@@ -83,6 +76,12 @@ import PageEnd from "../components/pageEnd.vue";
 </script>
 
 <style lang="postcss" scoped>
+.account-link{
+  color: -webkit-link;
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: 20px;
+}
 .main {
   top: 0;
   display: flex;
@@ -90,6 +89,10 @@ import PageEnd from "../components/pageEnd.vue";
   width: 100vw;
   flex: 1;
   overflow-x: hidden;
+}
+
+.qr-code{
+  height: 40vh;
 }
 .header {
   top: 0;

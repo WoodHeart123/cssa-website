@@ -5,10 +5,10 @@
         <img src="../assets/home/cssalogo-red-sm.png" />
       </div>
       <div class="menu_col">
-        <a href="http://www.cssaatuwmadison.com.cn/" class="font-dark">主页</a>
+        <a :href="getComputedUrl('')" class="font-dark">主页</a>
         <div class="font-dark selected">关于cssa</div>
-        <a href="http://www.cssaatuwmadison.com.cn/Member" class="font-dark">成员相册</a>
-        <a href="http://www.cssaatuwmadison.com.cn/Contact" class="font-dark">联系我们</a>
+        <a :href="getComputedUrl('Member')" class="font-dark">成员相册</a>
+        <a :href="getComputedUrl('Contact')" class="font-dark">联系我们</a>
       </div>
     </div>
     <div
@@ -114,7 +114,11 @@
       <div class="paragraph no-margin center">.</div>
       <div class="paragraph no-margin center">.</div>
       <div class="paragraph no-margin center">还有 ...</div>
-      <div class="paragraph center"><strong>麦屯音乐节、中秋游园夜、羽毛球比赛、达人探店、狼人剧本 ...</strong></div>
+      <div class="paragraph center">
+        <strong
+          >麦屯音乐节、中秋游园夜、羽毛球比赛、达人探店、狼人剧本 ...</strong
+        >
+      </div>
     </div>
     <div class="box no-border">
       <div class="title">更多福利：</div>
@@ -219,34 +223,27 @@ export default {
         this.scrollHeader = false;
       }
     },
-    toMain: function () {
-      this.$router.push("/");
+    getComputedUrl(path) {
+      return `${window.location.origin}/${path}`;
     },
-    toContact:function(){
-      this.$router.push("Contact");
-    },
-    toMember:function(){
-      this.$router.push("Member");
-    },
-    onResize () {
+    onResize() {
       this.isMobile = window.innerWidth < 600;
       console.log(this.isMobile);
-    }
-    
+    },
   },
   mounted() {
-    this.onResize()
+    this.onResize();
     window.addEventListener("scroll", this.handleScroll);
-    window.addEventListener('resize', this.onResize, { passive: true })
+    window.addEventListener("resize", this.onResize, { passive: true });
   },
   destroyed() {
     window.removeEventListener("scroll", this.handleScroll);
   },
-  beforeDestroy(){
-    if (typeof window !== 'undefined') {
-      window.removeEventListener('resize', this.onResize, { passive: true })
+  beforeDestroy() {
+    if (typeof window !== "undefined") {
+      window.removeEventListener("resize", this.onResize, { passive: true });
     }
-  }
+  },
 };
 import Sponsor from "../components/sponser.vue";
 import PageEnd from "../components/pageEnd.vue";

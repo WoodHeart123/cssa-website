@@ -14,15 +14,9 @@
         </div>
         <div class="menu_col">
           <div class="font-white selected">主页</div>
-          <a
-            href="http://www.cssaatuwmadison.com.cn/AboutCSSA"
-            class="font-dark"
-            >关于cssa</a
-          >
-          <a href="http://www.cssaatuwmadison.com.cn/Member" class="font-dark"
-            >成员相册</a
-          >
-          <a href="http://www.cssaatuwmadison.com.cn/Contact" class="font-dark"
+          <a :href="getComputedUrl('AboutCSSA')" class="font-dark">关于cssa</a>
+          <a :href="getComputedUrl('Member')" class="font-dark">成员相册</a>
+          <a :href="getComputedUrl('Contact')" class="font-dark"
             >联系我们</a
           >
         </div>
@@ -70,18 +64,13 @@
     </div>
     <div class="main-mobile" v-show="isMobile">
       <van-tabs class="mobile-tab">
-        <van-tab title="标签 1"></van-tab>
-        <van-tab title="标签 2"></van-tab>
+        <van-tab title="关于CSSA"></van-tab>
+        <van-tab title="联系CSSA"></van-tab>
       </van-tabs>
       <van-swipe vertical :loop="loop">
-        <van-swipe-item 
-          ><swiper-mobile-vue></swiper-mobile-vue
-        ></van-swipe-item>
-        <van-swipe-item 
-          ><page-end-mobile></page-end-mobile
-        ></van-swipe-item>
-        <van-swipe-item 
-          ><sponsor-mobile></sponsor-mobile></van-swipe-item>
+        <van-swipe-item><swiper-mobile-vue></swiper-mobile-vue></van-swipe-item>
+        <van-swipe-item><page-end-mobile></page-end-mobile></van-swipe-item>
+        <van-swipe-item><sponsor-mobile></sponsor-mobile></van-swipe-item>
       </van-swipe>
     </div>
   </div>
@@ -98,11 +87,11 @@ export default {
     PageEnd,
     swiperMobileVue,
     pageEndMobile,
-    sponsorMobile
+    sponsorMobile,
   },
   data() {
     return {
-      loop:false,
+      loop: false,
       isMobile: false,
       scrollHeader: false,
       about_cssa: [
@@ -113,37 +102,37 @@ export default {
       ],
       member_arr: [
         {
-          imageUrl: require("../assets/home/yang.jpg"),
-          name: "杨天林",
+          imageUrl: require("../assets/members/qing.jpg"),
+          name: "郭晴",
           position: "现任主席",
         },
         {
-          imageUrl: require("../assets/home/chu.jpg"),
-          name: "楚芸蔚",
+          imageUrl: require("../assets/members/guo.jpg"),
+          name: "郭嘉怡",
           position: "外联部长",
         },
         {
-          imageUrl: require("../assets/home/shen.jpg"),
-          name: "沈格非",
+          imageUrl: require("../assets/members/lin.jpg"),
+          name: "林畅",
           position: "多媒体部长",
         },
         {
-          imageUrl: require("../assets/home/ma.jpg"),
-          name: "马伊侬",
+          imageUrl: require("../assets/members/chang.jpg"),
+          name: "常靖",
           position: "宣传部长",
         },
         {
-          imageUrl: require("../assets/home/hou.jpg"),
-          name: "侯映泽",
+          imageUrl: require("../assets/members/zeng.jpg"),
+          name: "曾植",
           position: "活动部长",
         },
         {
-          imageUrl: require("../assets/home/su.jpg"),
-          name: "苏浩涵",
+          imageUrl: require("../assets/members/zou.jpg"),
+          name: "邹嘉伟",
           position: "研究生部长",
         },
         {
-          imageUrl: require("../assets/home/sun.jpg"),
+          imageUrl: require("../assets/members/sun.jpg"),
           name: "孙博彦",
           position: "技术部部长",
         },
@@ -160,14 +149,8 @@ export default {
         this.scrollHeader = false;
       }
     },
-    toAboutCSSA: function () {
-      this.$router.push("AboutCSSA");
-    },
-    toContact: function () {
-      this.$router.push("Contact");
-    },
-    toMember: function () {
-      this.$router.push("Member");
+    getComputedUrl(path){
+      return `${window.location.origin}/${path}`
     },
     onResize() {
       this.isMobile = window.innerWidth < 800;
@@ -196,13 +179,13 @@ import sponsorMobile from "../components/sponsorMobile.vue";
 </script>
 
 <style lang="postcss" scoped>
-.mobile-tab{
+.mobile-tab {
   position: fixed;
-  top:0;
+  top: 0;
   width: 100vw;
   z-index: 10;
 }
-.main-container{
+.main-container {
   height: auto;
 }
 .main {

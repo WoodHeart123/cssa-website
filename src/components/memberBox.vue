@@ -1,5 +1,5 @@
 <template>
-  <div class="box">
+  <div class="box" @click="toWechat">
     <div class="header">
       <img class="arrow" style="margin-left:10vw" src="../assets/icon/arrow-right.png" />
       <div class="board-text">{{board.title}}</div>
@@ -14,24 +14,34 @@
 <script>
 export default {
   name: "MemberBox",
-  props:["board"]
+  props:["board"],
+  methods: {
+    toWechat: function(){
+      window.open(this.board.url,"");
+    }
+  }
 };
 </script>
 
 <style lang="postcss" scoped>
 .box{
-  width:100vw;
+  width:60vw;
   height:50vh;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   cursor: pointer;
-  margin-bottom: 10vh;
+  position: relative;
+  background: transparent;
+  transition: box-shadow 0.3s ease;
 }
+.box:hover{
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
 .header{
   display: flex;
-  width:60vw;
   flex-direction: row;
-  margin-left:20vw;
   align-items: center;
   justify-content: space-between;
 }
@@ -40,12 +50,10 @@ export default {
   font-size: 30px;
 }
 .text-box{
-  width:60vw;
   max-height: 300px;
   min-height: 300px;
   border:1px solid #ccc;
   background: #eee;
-  margin-left:20vw;
   display:flex;
   flex-direction: column;
   align-items: center;
