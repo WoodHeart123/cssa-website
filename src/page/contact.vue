@@ -19,10 +19,10 @@
     </div>
     <div class="contact-box">
       <div class="contact">-> 微信公众号: CSSAatUWMadison</div>
-      <div class="contact">-> Youtube: CSSA At UW-Madison <a class="account-link" href="https://www.youtube.com/@cssaatuw-madison8217">去关注</a></div>
-      <div class="contact">-> Instagram: Cssa_at-Uwmadison  <a class="account-link" href="https://www.instagram.com/cssa_at_uwmadison/">去关注</a></div>
-      <div class="contact">-> 小红书: CSSAatUWMadison <a class="account-link" href="https://www.xiaohongshu.com/user/profile/5c95c99b0000000012001064">去关注</a></div> 
-      <div class="contact">-> 抖音: CSSAatUWMadison <a class="account-link" href="https://www.douyin.com/user/MS4wLjABAAAA4PoQHiC2gWZIyqdTciUWenD22OyLjnRQe5LFhFSDs_hnxV9BvtFxUm1dY9sX9Kme">去关注</a></div> 
+      <div class="contact">-> Youtube: CSSA At UW-Madison <a class="account-link" href="https://www.youtube.com/@cssaatuw-madison8217" target="_blank">去关注</a></div>
+      <div class="contact">-> Instagram: Cssa_at-Uwmadison  <a class="account-link" href="https://www.instagram.com/cssa_at_uwmadison/" target="_blank">去关注</a></div>
+      <div class="contact">-> 小红书: CSSAatUWMadison <a class="account-link" href="https://www.xiaohongshu.com/user/profile/5c95c99b0000000012001064" target="_blank">去关注</a></div> 
+      <div class="contact">-> 抖音: CSSAatUWMadison <a class="account-link" href="https://www.douyin.com/user/MS4wLjABAAAA4PoQHiC2gWZIyqdTciUWenD22OyLjnRQe5LFhFSDs_hnxV9BvtFxUm1dY9sX9Kme" target="_blank">去关注</a></div> 
     </div>
     <div class="contact-box"> 
       <div class="contact">新生微信群</div>
